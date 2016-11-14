@@ -1,11 +1,23 @@
 <?php
 namespace Admin\Controller;
+
 use Think\Controller;
-class IndexController extends Controller {
-    public  function _initialize(){
-        checkLogin();
+use Admin\Controller\LoginController;
+
+class IndexController extends Controller
+{
+    public function _initialize()
+    {
+        \Admin\Controller\LoginController::isLogin();
     }
-    public function index(){
+
+    public function index()
+    {
+        $this->display();
+    }
+
+    public function login()
+    {
         $this->display();
     }
 }
