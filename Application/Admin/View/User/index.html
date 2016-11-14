@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+    <h1>users</h1>
+    <a href="add">新增用户</a>
+    <ul>
+
+    <volist name="users" id="user">
+        <li>
+        {$user.id}:{$user.nickname}<img src="/Uploads/{$user.face}"><span>{$user.wechat_id}</span><br/>
+        <a href="javascript:;" data-uid="{$user.id}">删除用户</a>
+        </li>
+    </volist>
+
+    </ul>
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script>
+        $('a').on("click",function(e){
+            var target = $(this);
+            deleteUser(target.attr('data-uid'));
+        });
+        function deleteUser(id){
+            $.ajax({
+                url:'deleteUser',
+                data:{
+                    id: id
+                },
+                method: "POST",
+                success:function(res){
+                    console.info(res);
+                    if(res.status ==='200'){
+                        $("a[data-uid='"+id+"']").parent().remove();
+                    }
+
+                },
+                error:function(err){
+
+                }
+            });
+        }
+    </script>
+</body>
+</html>

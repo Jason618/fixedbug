@@ -3,6 +3,9 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
+        $User = M("User");
+        $User->find();
+        dump($User->data());
         $name = 'index page';
         $this->assign('name',$name);
         $this->display();
