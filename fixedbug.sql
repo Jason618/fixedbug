@@ -9,7 +9,7 @@
  Target Server Version : 50713
  File Encoding         : utf-8
 
- Date: 11/15/2016 19:21:49 PM
+ Date: 11/16/2016 19:05:11 PM
 */
 
 SET NAMES utf8;
@@ -27,14 +27,15 @@ CREATE TABLE `fb_article` (
   `title` varchar(255) NOT NULL COMMENT '文章标题',
   `content` text NOT NULL COMMENT '文章内容',
   `category_id` int(11) NOT NULL COMMENT '文章分类id',
+  `status` int(2) NOT NULL DEFAULT '1' COMMENT '1上线状态 其他表示下线',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `fb_article`
 -- ----------------------------
 BEGIN;
-INSERT INTO `fb_article` VALUES ('3', '12', '2016-11-14 18:07:23', '2016-11-14 18:07:23', 'html', 'html', '1');
+INSERT INTO `fb_article` VALUES ('3', '15', '2016-11-14 18:07:23', '2016-11-14 18:07:23', 'html', 'html', '1', '1'), ('4', '15', '2016-11-16 18:07:53', '2016-11-16 18:07:53', 'test', 'sdgdgagd', '2', '1'), ('5', '15', '2016-11-16 18:08:40', '2016-11-16 18:08:40', 'agdsag', '123', '1', '1'), ('6', '15', '2016-11-16 18:08:48', '2016-11-16 18:08:48', 'dasgsa', '12314141421', '1', '1'), ('7', '15', '2016-11-16 18:08:53', '2016-11-16 18:08:53', 'dsgagsa', 'agadsgsag', '1', '1');
 COMMIT;
 
 -- ----------------------------
@@ -67,13 +68,13 @@ CREATE TABLE `fb_user` (
   `username` char(50) NOT NULL DEFAULT '' COMMENT '用于登陆编辑后台',
   `password` char(50) NOT NULL COMMENT '登陆密码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `fb_user`
 -- ----------------------------
 BEGIN;
-INSERT INTO `fb_user` VALUES ('12', 'test', '20161114/58298c103750b.jpg', 'test', '2016-11-14 18:04:00', 'test', 'e10adc3949ba59abbe56'), ('13', 'TEST', '20161114/5829921f40b67.jpg', '131241', '2016-11-14 18:29:51', 'ROOT', '73acd9a5972130b75066');
+INSERT INTO `fb_user` VALUES ('15', 'test', '20161116/582c2d056cb2e.png', 'te', '2016-11-16 17:55:17', 'test', '949ba59abb');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
