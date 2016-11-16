@@ -8,9 +8,14 @@
 
 namespace Admin\Controller;
 use Think\Controller;
+use Admin\Controller\LoginController;
 
 class UserController extends Controller
 {
+    public function _initialize()
+    {
+        \Admin\Controller\LoginController::isLogin();
+    }
     public function index(){
         //显示所有的用户users
         $User = M("User");
@@ -24,6 +29,8 @@ class UserController extends Controller
     }
     //新增用户
     public  function addUser(){
+        //TODO  新增是判断用户名或者微信号是否已经加入
+        //TODO 特殊字符过滤 等
         //文件上传配置
         $config = array(
             'maxSize'    =>    3145728,
@@ -72,7 +79,7 @@ class UserController extends Controller
             $data['face'] = $info['savepath'].$info['savename'];
             $data['wechat_id'] = $wechatId;
             $data['username'] = $username;
-            $data['password'] = substr(md5($pass),0,20);  //密码加密存储
+            $data['password'] = substr(md5($pass),7,10);  //密码加密存储
 
             //实例化User
             $User = M("User");

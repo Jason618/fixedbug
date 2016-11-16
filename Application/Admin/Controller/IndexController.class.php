@@ -16,8 +16,4 @@ class IndexController extends Controller
         $this->display();
     }
 
-    public function login()
-    {
-        $this->display();
-    }
 }
