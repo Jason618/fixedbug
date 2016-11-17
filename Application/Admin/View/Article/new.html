@@ -13,9 +13,13 @@
             <option value="3">CSS</option>
         </select>
         <input name="title" placeholder="标题">
-        <textarea placeholder="内容" name="content"></textarea>
+        <p>文章编辑器,<strong>Markdonw</strong>语法编辑</p>
+        <textarea placeholder="内容" name="content" id="textInput" oninput="this.editor.update()"></textarea>
+        <input type="hidden" name="content" id="submitInput">
         <input type="submit" value="提交">
     </form>
+    <div id="preview" class=""></div>
     <script type="text/javascript" src="__PUBLIC__/js/lib/markdown.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/admin/article_new.js"></script>
 </body>
 </html>

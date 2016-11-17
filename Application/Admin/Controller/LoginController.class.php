@@ -36,6 +36,7 @@ class LoginController extends Controller
         if($data){
             //设置session
             session('user',$data['username']); //设置username 为session标示
+            session('loginId',$data['id']); //设置username 为session标示
             $surl = session('surl');
             //$this->redirect($surl);  //redirect函数调用啦U函数生成新的URL   错误  原因还不知道
             header('location:'.$surl);
