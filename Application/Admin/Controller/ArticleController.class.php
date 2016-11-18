@@ -11,6 +11,7 @@ namespace Admin\Controller;
 use Think\Controller;
 use Admin\Controller\LoginController;
 
+
 class ArticleController extends Controller
 {
     public function _initialize()
@@ -79,5 +80,19 @@ class ArticleController extends Controller
         dump($data);
         $this->assign('article',$data);
         $this->display(); // 输出模板
+    }
+
+    public function upload(){
+        $file = $_FILES['afile'];
+        $info = commonUpload($file);
+
+//        $json = json_encode(array(
+//            'name' => $info['savename'],
+//            'dataUrl' => $info['savepath'].$info['savename']
+//        ));
+        $json['name'] = $info['name'];
+        $json['savename'] = $info['savename'];
+        $json['imageUrl'] = $_SERVER['HTTP_ORIGIN']."/Uploads/".$info['savepath'].$info['savename'];
+        $this->ajaxReturn($json,'JSON');
     }
 }

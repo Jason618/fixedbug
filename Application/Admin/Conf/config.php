@@ -5,5 +5,7 @@ return array(
     'URL_ROUTER_ON'   => true,
     'URL_ROUTE_RULES'=>array(
         'Article/j/:uuid' => 'Article/detail'
-    )
+    ),
+    'LOAD_EXT_FILE'=>'Admin'
+
 );

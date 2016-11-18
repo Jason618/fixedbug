@@ -70,7 +70,8 @@ class UserController extends Controller
         //验证wechat_name  if have
 
         //头像文件上传
-        $info = $upload->uploadOne($_FILES['face']);
+        $faceFile  =$_FILES['face'];
+        $info = $upload->uploadOne($faceFile);
         if(!$info) {// 上传错误提示错误信息
             $this->error($upload->getError());
         }else{// 上传成功 获取上传文件信息
