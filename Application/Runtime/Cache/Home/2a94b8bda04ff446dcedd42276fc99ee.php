@@ -66,6 +66,23 @@
         <div class="content pure-u-1 pure-u-md-3-4">
             <div>
                 <!-- A wrapper for all the blog posts -->
+                <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$article): $mod = ($i % 2 );++$i;?><article class="post">
+                            <header class="post-header">
+                                <img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48" src="/Uploads/<?php echo ($article["face"]); ?>">
+                                <a href="/index.php/Home/j/<?php echo ($article["uuid"]); ?>">
+                                    <h2 class="post-title"><?php echo ($article["title"]); ?></h2>
+                                </a>
+
+                                <p class="post-meta">
+                                    By <span class="post-author"><?php echo ($article["nickname"]); ?></span> under <a class="post-category post-category-design" href="/index.php/Home/c/<?php echo ($article["category_id"]); ?>"><?php echo ($article["category_name"]); ?></a>
+                                </p>
+                            </header>
+
+                            <!--<div class="post-description">-->
+                            <!--<?php echo ($article["content"]); ?>-->
+                            <!--</div>-->
+                        </article><?php endforeach; endif; else: echo "" ;endif; ?>
+                <?php echo ($page); ?>
                 <div class="posts">
                     <h1 class="content-subhead">Pinned Post</h1>
 

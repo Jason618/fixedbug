@@ -193,6 +193,10 @@ html编辑时代换行符导致了该bug
 
 ![Alt text](http://127.0.0.1/Uploads/20161118/582eb7981ea8a.png "Optional title")
 
+####总结
+
+<mark>建议：移动端建议使用第四种方法，pc端建议使用第五种方法</mark>
+
 ####参考文献
 
 * [an example](http://baidu.com/ 'title')

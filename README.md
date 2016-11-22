@@ -38,7 +38,7 @@ www.fixedbug.com
 
 ####解决办法
 第一种方法：清除元素间的换行符
-	
+####总结
 ####参考文献
 
 * [an example](http://baidu.com/ 'title')

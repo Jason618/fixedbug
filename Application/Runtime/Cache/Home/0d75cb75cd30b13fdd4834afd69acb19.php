@@ -69,22 +69,23 @@
             <h1 class="content-subhead">Pinned Post</h1>
 
             <!-- A single blog post -->
-            <section class="post">
+            <article class="post">
                 <header class="post-header">
-                    <img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48" src="img/common/tilo-avatar.png">
+                    <img class="post-avatar" alt="Tilo Mitra&#x27;s avatar" height="48" width="48"
+                         src="/Uploads/<?php echo ($article["face"]); ?>">
 
-                    <h2 class="post-title">Introducing Pure</h2>
+                    <h2 class="post-title"><?php echo ($article["title"]); ?></h2>
 
                     <p class="post-meta">
-                        By <a href="#" class="post-author">Tilo Mitra</a> under <a class="post-category post-category-design" href="#">CSS</a> <a class="post-category post-category-pure" href="#">Pure</a>
+                        By <span class="post-author"><?php echo ($article["nickname"]); ?></span> under <a
+                            class="post-category post-category-design" href="/index.php/Home/c/<?php echo ($article["category_id"]); ?>"><?php echo ($article["category_name"]); ?></a>
                     </p>
                 </header>
 
                 <div class="post-description">
-                    # content title
-
+                <?php echo ($article["content"]); ?>
                 </div>
-            </section>
+            </article>
         </div>
         <div class="footer">
     <div class="pure-menu pure-menu-horizontal">
