@@ -9,7 +9,7 @@
  Target Server Version : 50713
  File Encoding         : utf-8
 
- Date: 11/16/2016 19:05:11 PM
+ Date: 11/22/2016 14:30:29 PM
 */
 
 SET NAMES utf8;
@@ -23,20 +23,13 @@ CREATE TABLE `fb_article` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL COMMENT '作者id',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   `title` varchar(255) NOT NULL COMMENT '文章标题',
   `content` text NOT NULL COMMENT '文章内容',
   `category_id` int(11) NOT NULL COMMENT '文章分类id',
   `status` int(2) NOT NULL DEFAULT '1' COMMENT '1上线状态 其他表示下线',
+  `uuid` varchar(25) NOT NULL COMMENT '根据时间戳md5后前20位 用于查找文章详情  不实用ID字段',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-
--- ----------------------------
---  Records of `fb_article`
--- ----------------------------
-BEGIN;
-INSERT INTO `fb_article` VALUES ('3', '15', '2016-11-14 18:07:23', '2016-11-14 18:07:23', 'html', 'html', '1', '1'), ('4', '15', '2016-11-16 18:07:53', '2016-11-16 18:07:53', 'test', 'sdgdgagd', '2', '1'), ('5', '15', '2016-11-16 18:08:40', '2016-11-16 18:08:40', 'agdsag', '123', '1', '1'), ('6', '15', '2016-11-16 18:08:48', '2016-11-16 18:08:48', 'dasgsa', '12314141421', '1', '1'), ('7', '15', '2016-11-16 18:08:53', '2016-11-16 18:08:53', 'dsgagsa', 'agadsgsag', '1', '1');
-COMMIT;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `fb_category`
@@ -68,13 +61,13 @@ CREATE TABLE `fb_user` (
   `username` char(50) NOT NULL DEFAULT '' COMMENT '用于登陆编辑后台',
   `password` char(50) NOT NULL COMMENT '登陆密码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `fb_user`
 -- ----------------------------
 BEGIN;
-INSERT INTO `fb_user` VALUES ('15', 'test', '20161116/582c2d056cb2e.png', 'te', '2016-11-16 17:55:17', 'test', '949ba59abb');
+INSERT INTO `fb_user` VALUES ('15', 'test', '20161116/582c2d056cb2e.png', 'te', '2016-11-16 17:55:17', 'test', '949ba59abb'), ('16', 'tes', '20161118/582e80bde55a2.png', 'tat', '2016-11-18 12:17:23', '123', '949ba59abb');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
