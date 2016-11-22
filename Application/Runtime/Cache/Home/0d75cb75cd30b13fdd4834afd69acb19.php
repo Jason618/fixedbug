@@ -21,45 +21,29 @@
         <h2 class="brand-tagline"></h2>
 
         <nav class="nav">
-            <h3>前端</h3>
             <ul class="nav-list">
-                <li class="nav-item">
-                    <a class="pure-button" href="http://purecss.io">javascript</a>
-                </li>
-                <li class="nav-item">
-                    <a class="pure-button" href="http://yuilibrary.com">html</a>
-                </li>
-                <li class="nav-item">
-                    <a class="pure-button" href="http://yuilibrary.com">css</a>
-                </li>
-                <li class="nav-item">
-                    <a class="pure-button" href="http://yuilibrary.com">html</a>
-                </li>
-                <li class="nav-item">
-                    <a class="pure-button" href="http://yuilibrary.com">html</a>
-                </li>
-            </ul>
-            <h3>Back end</h3>
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a class="pure-button">java</a>
-                </li>
-                <li class="nav-item">
-                    <a class="pure-button">php</a>
-                </li>
-                <li class="nav-item">
-                    <a class="pure-button">.net</a>
-                </li>
-                <li class="nav-item">
-                    <a class="pure-button">C#</a>
-                </li>
-                <li class="nav-item">
-                    <a class="pure-button">python</a>
-                </li>
-                <li class="nav-item">
-                    <a class="pure-button">Ruby</a>
-                </li>
-            </ul>
+            <?php if(is_array($categorys)): $i = 0; $__LIST__ = $categorys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><li class="nav-item">
+                    <a class="pure-button" href="/index.php/Home/c/<?php echo ($category["id"]); ?>"><?php echo ($category["name"]); ?></a>
+                </li><?php endforeach; endif; else: echo "" ;endif; ?>
+                </ul>
+            <!--<h3>前端</h3>-->
+            <!--<ul class="nav-list">-->
+                <!--<li class="nav-item">-->
+                    <!--<a class="pure-button" href="http://purecss.io">javascript</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                    <!--<a class="pure-button" href="http://yuilibrary.com">html</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                    <!--<a class="pure-button" href="http://yuilibrary.com">css</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                    <!--<a class="pure-button" href="http://yuilibrary.com">html</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                    <!--<a class="pure-button" href="http://yuilibrary.com">html</a>-->
+                <!--</li>-->
+            <!--</ul>-->
         </nav>
     </div>
 </div>

@@ -17,6 +17,9 @@ class IndexController extends Controller {
             array_push($newList,$item);
         }
         dump($newList);*/
+        $categorys = \Home\Controller\ListController::cateList();
+        //分类
+        $this->assign('categorys',$categorys);
         $this->assign('list', $list);// 赋值数据集
         $this->assign('page', $show);// 赋值分页输出
         $this->display(); // 输出模板
