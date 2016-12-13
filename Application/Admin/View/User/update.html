@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add user</title>
+</head>
+<body>
+<h1>add user</h1>
+
+<form action="__URL__/updateUser" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{$user.id}">
+    <label>昵称:{$user.id}</label>
+    <input type="text" placeholder="please type your nickname" name="nickname" value="{$user.nickname}">
+    <label>头像:</label>
+    <input type="file" name="face" value="{$user.face}">
+    <label>微信号</label>
+    <input type="text" name="wechatiId" placeholder="用于打赏" value="{$user.wechatiId}" >
+    <label>用户名:</label>
+    <input type="text" placeholder="登陆帐户" name="username" value="{$user.username}">
+    <label>密  码:</label>
+    <input type="password" placeholder="登陆密码" name="password" value="{$user.password}">
+    <input type="submit" value="update">
+</form>
+</body>
+</html>

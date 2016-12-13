@@ -13,6 +13,7 @@
         <li>
         {$user.id}:{$user.nickname}<img src="/Uploads/{$user.face}"><span>{$user.wechat_id}</span><br/>
         <a href="javascript:;" data-uid="{$user.id}">删除用户</a>
+        <a href="__URL__/update/{$user.id}">更新</a>
         </li>
     </volist>
 
