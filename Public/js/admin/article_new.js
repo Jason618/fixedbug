@@ -31,7 +31,7 @@
 
     function AjaxUpload(containerSelector,url,method){
         this.elementSelecotr = containerSelector;
-        this.url = url;
+        this.url = "http://" + location.host + url;
         this.method = method;
         this.init();
     }
@@ -94,6 +94,6 @@
         }
     }
 
-    new AjaxUpload('.uploads','http://127.0.0.1/index.php/Admin/Article/upload','POST');
+    new AjaxUpload('.uploads','/index.php/Admin/Article/upload','POST');
 
 })();
