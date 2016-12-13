@@ -1,4 +1,4 @@
-#CSS display inline-block 3px（标题） 
+
 ###在写页面和布局样式的时候，这样的场景可能会经常出现，两个span标签，display属性值为inline-block,然后神奇的3px间隙出现啦。（简介）
 ####正文开始）首先我们来看看我们的html和css是怎么写的。 
   html:
@@ -29,7 +29,7 @@
 
 ####显示效果如下：
 
-![Alt text](http://127.0.0.1/Uploads/20161118/582eb41c9f513.png "Optional title")
+![Alt text](/Uploads/20161118/582eb41c9f513.png "Optional title")
 
 ####原因分析
 html编辑时代换行符导致了该bug
@@ -58,7 +58,7 @@ html编辑时代换行符导致了该bug
     </nav>
 显示效果：
 
-![Alt text](http://127.0.0.1/Uploads/20161118/582eb7981ea8a.png "Optional title")
+![Alt text](/Uploads/20161118/582eb7981ea8a.png "Optional title")
 
 第二种方法：margin负值
 	
@@ -91,7 +91,7 @@ html编辑时代换行符导致了该bug
 
 显示效果：
 
-![Alt text](http://127.0.0.1/Uploads/20161118/582eb7981ea8a.png "Optional title")
+![Alt text](/Uploads/20161118/582eb7981ea8a.png "Optional title")
 
 第三种方法：font-size:0  <mark>如果你的单位是使用em,这种方法就不可取了，但是rem就不受影响，可以放心使用。另外这个方法在android的低版本浏览器中不生效。</mark>
 
@@ -191,7 +191,7 @@ html编辑时代换行符导致了该bug
     
 显示效果：
 
-![Alt text](http://127.0.0.1/Uploads/20161118/582eb7981ea8a.png "Optional title")
+![Alt text](/Uploads/20161118/582eb7981ea8a.png "Optional title")
 
 ####总结
 
@@ -199,9 +199,6 @@ html编辑时代换行符导致了该bug
 
 ####参考文献
 
-* [an example](http://baidu.com/ 'title')
-* [an example](http://baidu.com/ 'title')
-* <http://baidu.com>
-* <http://baidu.com>
+* [www.w3.org](http://www.w3.org/TR/css-style-attr/ 'title')
 
 ####其他

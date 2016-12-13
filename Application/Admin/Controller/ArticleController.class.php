@@ -82,6 +82,42 @@ class ArticleController extends Controller
         $this->display(); // 输出模板
     }
 
+    //修改文章
+    public function update(){
+        $uuid = $_GET['uuid'];
+        $article = M('article');
+        $data = $article->where('uuid="'.$uuid.'"')->find(); //  $article
+        dump($data);
+        $this->assign('article',$data);
+        $this->display();
+    }
+
+
+    public function a_update(){
+        $userId = $_SESSION['loginId'] ? $_SESSION['loginId'] : '1'; //如果没有登陆用户 默认为test
+        $uuid = $_POST['uuid'];
+        $title = $_POST['title'];
+        $content = $_POST['content'];
+        $categoryId = $_POST['category'];
+
+        //非空验证
+        if ($title == null) {
+            $this->error('$title 为空');
+        }
+        if ($content == null) {
+            $this->error('$content 为空');
+        }
+
+        $Article = M('article');
+
+        $data['title'] = $title;
+        $data['content'] = $content;
+        $data['category_id'] = $categoryId;
+
+        $Article->where("uuid='".$uuid."'")->save($data);
+        $this->success('修改成功', 'index');  //页面跳转
+    }
+
     public function upload(){
         $file = $_FILES['afile'];
         $info = commonUpload($file);

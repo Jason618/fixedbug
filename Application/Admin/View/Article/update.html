@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增文章</title>
+    <style>
+        input[name=title]{
+            width: 50%;
+            overflow: hidden;
+        }
+        textarea{
+            min-height: 400px;
+            width: 100%;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>新增文章</h1>
+<h2>图片上传,内容编辑器默认推荐使用markdown语法,使用的图片请提前上传</h2>
+<div class="uploads">
+    <label>选择文件:</label>
+    <input type="file">
+    <button class="uploads-btn" id="imageUpload">上传</button>
+    <p>图片使用异步方式上传</p>
+    <div class="uploads-urls" id="uploadedUrl">
+
+    </div>
+</div>
+<form method="post" action="__URL__/a_update">
+    <input type="hidden" name="uuid" value="{$article.uuid}">
+    <select name="category">
+        <option value="1" default>HTML</option>
+        <option value="2">Javascript</option>
+        <option value="3">CSS</option>
+    </select>
+    <input name="title" placeholder="标题" value="{$article.title}">
+    <p>文章编辑器,<strong>Markdonw</strong>语法编辑</p>
+    <textarea placeholder="内容" name="content" id="textInput" value="" oninput="this.editor.update()"></textarea>
+    <input type="hidden" name="content" id="submitInput" value="">
+    <input type="submit" value="更新">
+</form>
+<div id="preview" class=""></div>
+<script type="text/javascript" src="__PUBLIC__/js/lib/markdown.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/admin/article_new.js"></script>
+</body>
+</html>
