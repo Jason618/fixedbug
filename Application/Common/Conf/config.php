@@ -16,5 +16,7 @@ return array(
     //URL 大小写
     'URL_CASE_INSENSITIVE' =>true,
 
-
+    // 允许访问的模块列表
+    'MODULE_ALLOW_LIST'    =>    array('Home','Admin','User'),
+    'DEFAULT_MODULE'       =>    'Home',  // 默认模块
 );

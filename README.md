@@ -4,6 +4,9 @@ www.fixedbug.com
 后台参考:https://github.com/cnsecer/ThinkAdmin
 
 ####TODO 全站搜索
+####TODO about page
+####TODO 打赏
+####TODO 评论(需要登陆,所以改功能暂时提供邮箱建议)
 
 
 
